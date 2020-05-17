@@ -1,0 +1,12 @@
+=desktop()
+    @media screen and ( max-width: 100em )
+        @content
+=tablet()
+    @media screen and ( max-width: 64em )
+        @content
+=mobile()
+    @media screen and ( max-width: 48em )
+        @content
+=mediaCustom($media)
+    @media screen and ( max-width: $media )
+        @content

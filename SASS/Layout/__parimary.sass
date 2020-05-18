@@ -1,11 +1,14 @@
 @import ../Abstract/__variables
 @import ../Abstract/__extend
+@import ../Abstract/__mixin
     
 .projectStory
     width: 100%
     position: relative
     height: max-content
     margin-bottom: 230px
+    +mobile()
+        margin-bottom: 150px
     &__figure
         position: relative
         left: 0px
@@ -14,8 +17,12 @@
         height: 100%
         margin: 0px
         overflow: hidden
+        +mobile()
+            width: 100%
         img 
             width: 100%
+            +mobile()
+                width: calc(100% - 20px)
     & > h2 
         position: absolute
         max-width: 1380px
@@ -28,6 +35,11 @@
         top: 32%
         left: 50%
         transform: translateX(-50%)
+        font-family: 'Crimson Text', sans-serif
+        +mobile()
+            font-size: 40px
+            top: -15%
+            padding: 0px 10px
     &__buttons
         position: absolute
         max-width: 1380px
@@ -39,12 +51,17 @@
         left: 50%
         transform: translateX(-50%)
         top: calc(100% - 40px)
+        +mobile()
+            padding: 0px 0px 0px 20px
         button 
             width: calc(50% + 10px)
             height: 80px
             background-color: $colorKinBlue
             border: none
             padding: 0px
+            +mobile()
+                width: 100%
+                height: auto
             &:first-of-type 
                 margin-bottom: 10px
             a 
@@ -54,6 +71,9 @@
                 font-size: 16px
                 justify-content: space-between
                 padding: 0px 35px
+                +mobile()
+                    padding: 20px 10px
+                    font-size: 14px
     &::after
         bottom: -90px
         max-width: 1120px
@@ -69,13 +89,20 @@
 .workStyle
     position: relative
     margin-bottom: 230px
+    +mobile()
+        margin-bottom: 100px
     &__Img
         display: flex
         justify-content: flex-end
+        +mobile()
+            width: 100%
     &__figure
         max-width: calc(50% + 210px)
         margin: 0px
-        width: 100%
+        max-height: 480px
+        overflow: hidden
+        +mobile()
+            width: calc(100% - 20px)
         img 
             height: 100%
     & > h2 
@@ -90,6 +117,10 @@
         top: 32%
         left: 50%
         transform: translateX(-50%)
+        font-family: 'Crimson Text', sans-serif
+        +mobile()
+            font-size: 40px
+            top: -15%
     &__buttons
         position: absolute
         max-width: 1380px
@@ -98,12 +129,19 @@
         left: 50%
         transform: translateX(-50%)
         top: calc(100% - 40px)
+        +mobile()
+            padding: 0px 20px 0px 0px
+            top: 100%
+            transform: translate(-50%, -50%)
         button 
             width: calc(50% - 10px)
             height: 80px
             background-color: $colorKinBlue
             border: none
             padding: 0px
+            +mobile()
+                width: 100%
+                height: auto
             a 
                 display: flex
                 color: white
@@ -111,6 +149,9 @@
                 font-size: 16px
                 justify-content: space-between
                 padding: 0px 35px
+                +mobile()
+                    padding: 20px 10px
+                    font-size: 14px
     &::after
         bottom: -90px
         max-width: 1120px
@@ -122,6 +163,8 @@
         z-index: -1
         content: ''
         position: absolute
+        +mobile()
+            bottom: 0px
 .interview
     position: relative
     z-index: 0
@@ -136,42 +179,63 @@
         background-color: #d3d4d9
         z-index: -1
         content: ''
+        +mobile()
+            top: 25px
+            bottom: 70px
     &__wrap
         display: flex
         max-width: 1120px
         margin: auto
         position: relative
         align-items: flex-end
+        +mobile()
+            flex-direction: column
         & > *
             width: 100%
     &__content
         margin-right: 20px
+        +mobile()
+            margin-right: 0px
+            margin-bottom: 20px
         &--sub
             margin: 40px 0px
             font-size: 24px
             line-height: 1.4
+            +mobile()
+                font-size: 18px
+                margin: 20px 0px
             p:first-of-type
                 font-weight: bold
             p:last-of-type 
                 font-size: 16px
                 line-height: 1
                 margin-top: 20px
+                +mobile()
+                    margin-top: 10px
         h2 
             color: $colorKinBlue
             font-size: 80px
             display: flex
             flex-direction: column
+            font-family: 'Crimson Text', sans-serif
+            +mobile()
+                font-size: 40px
             span 
                 display: block
                 font-size: 20px
                 color: $colorKinGray
                 margin-top: 40px
+                +mobile()
+                    font-size: 14px
+                    margin-top: 10px
         &--more
             font-size: 16px
             text-transform: uppercase
             color: $colorKinBlue
             position: relative
             width: max-content
+            +mobile()
+                font-size: 14px
             &::after
                 content: ''
                 position: absolute
@@ -181,9 +245,19 @@
                 bottom: -5px
                 background-color: $colorKinBlue
     &__figure 
-        margin: 0px !important
+        margin: 0px
         position: relative
         img 
+            width: 100%
+    &__img
+        position: relative
+        z-index: 0
+        &--vendor
+            position: absolute
+            z-index: 1
+            top: 0px
+            left: 0px
+            height: 100%
             width: 100%
         &--count
             position: absolute
@@ -191,6 +265,10 @@
             font-size: 16px
             font-weight: bold
             right: 0px
+            +mobile()
+                top: initial
+                bottom: 0px
+                padding: 5px
         &--position
             color: $colorKinBlue
     &__button
@@ -198,17 +276,34 @@
         left: 100%
         bottom: 0px
         width: max-content !important
+        +mobile()
+            left: initial
+            right: 0px
+            bottom: 100%
+            display: flex
+            flex-flow: row nowrap
         span 
             position: relative
             display: block
             width: 50px
             height: 50px
             background-color: $colorKinBlue
+            &.next
+                margin-bottom: 1px
+            +mobile()
+                width: 25px
+                height: 25px
+                &.next
+                    margin-bottom: 0px
+                    margin-right: 1px
     &__link
         max-width: 1120px
         width: 100%
         margin: auto
         display: flex
+        +mobile()
+            flex-direction: column
+            padding: 20px 0px 40px
         & > * 
             width: 100%
             margin-top: 95px
@@ -216,8 +311,15 @@
             position: relative
             background-color: white
             border: none
+            padding: 0px
+            +mobile()
+                height: auto
+                margin-top: 0px
             &:first-of-type 
                 margin-right: 20px
+                +mobile()
+                    margin-right: 0px
+                    margin-bottom: 10px
             a 
                 position: relative
                 top: 0px
@@ -230,12 +332,19 @@
                 text-decoration: none
                 color: $colorKinBlue
                 font-size: 24px
+                font-weight: bold
+                +mobile()
+                    padding: 20px 10px
+                    font-size: 18px
 .Newsfocus
     margin: 100px 0px 90px
     padding: 100px 20px
     position: relative
     background-image: url('../assets/picture/レイヤー bg.png')
     z-index: 0
+    +mobile()
+        margin: 0px
+        padding: 40px 20px
     &::after
         position: absolute
         content: ''
@@ -251,8 +360,11 @@
         display: grid
         grid-template-columns: repeat(2, 1fr)
         grid-gap: 20px
+        +mobile()
+            grid-template-columns: repeat(1, 1fr)
         figure 
             width: 100%
+            margin: 0px
         img 
             width: 100%
         button  
@@ -261,6 +373,9 @@
             position: relative
             background-color: white
             border: none
+            +mobile()
+                height: auto
+                padding: 0px
             a 
                 position: absolute
                 top: 0px
@@ -273,28 +388,44 @@
                 text-decoration: none
                 color: black
                 font-size: 20px
+                font-weight: bold
+                +mobile()
+                    position: relative
+                    padding: 20px 10px
+                    font-size: 16px
 .blog 
     display: flex
     align-items: center
     flex-direction: column
     padding: 0px 20px
+    +mobile()
+        padding: 20px 20px
     h2 
         font-size: 64px
         color: $colorKinBlue
         display: flex
         flex-direction: column
-        font-weight: bold
         text-align: center
+        font-family: 'Crimson Text', sans-serif
+        +mobile()
+            font-size: 32px
         span 
             font-size: 20px
             color: $colorKinGray
             margin-top: 25px
             font-weight: normal
+            +mobile()
+                font-size: 16px
+                margin-top: 5px
+                line-height: 1
     &__news
         padding: 45px 0px 55px
         display: flex
         max-width: 1120px
         margin: auto
+        +mobile()
+            padding: 30px 0px 20px
+            flex-direction: column
         figure
             margin-bottom: 0px
             width: 100%
@@ -313,6 +444,9 @@
                 line-height: 1.4
             &:not(:last-of-type)
                 margin-right: 20px
+                +mobile()
+                    margin-right: 0px
+                    margin-bottom: 20px
     &__more
         font-size: 16px
         width: 180px
@@ -325,7 +459,8 @@
         align-items: center
         text-decoration: none
         margin-bottom: 40px
-
+        +mobile()
+            margin-bottom: 20px
 .recruit
     position: relative
     z-index: 0
@@ -337,16 +472,26 @@
         display: flex
         flex-direction: column
         margin: 30px 0px
+        font-family: 'Crimson Text', sans-serif
+        +mobile()
+            margin: 0px 0px 20px
+            font-size: 32px
         span 
             display: block
             padding: 20px 0px
             font-size: 20px
             color: $colorKinGray
+            +mobile()
+                font-size: 16px
+                padding: 0px
+                margin-top: 5px
     &__list
         display: flex
         max-width: 1120px
         width: 100%
         margin: auto
+        +mobile()
+            flex-direction: column
         & > * 
             width: 100%
             height: 265px
@@ -358,14 +503,20 @@
             background-color: white
             &:not(:last-of-type)
                 margin-right: 20px
+                margin-right: 0px
+                margin-bottom: 20px
             h3 
                 margin-top: 30px
                 font-size: 20px
+                font-weight: bold
     &__entry
         width: 360px
         height: 80px
         background-color: $colorKinBlue
         margin: 90px auto 0px
+        +mobile()
+            width: 100%
+            height: auto
         a 
             display: block
             height: 100%
@@ -377,6 +528,9 @@
             color: white
             font-size: 24px
             font-weight: bold
+            +mobile()
+                font-size: 18px
+                padding: 20px 0px
     &::before 
         content: ''
         position: absolute
@@ -389,6 +543,8 @@
         background-repeat: no-repeat
         background-position: center center
         z-index: -2
+        +mobile()
+            top: 15%
     &::after
         content: ''
         position: absolute
@@ -398,18 +554,27 @@
         left: 0px
         background-color: rgba($colorKinBlue, 0.8)
         z-index: -1
+        +mobile()
+            top: 15%
 .footer 
     padding: 0px 25px
     line-height: 1
     background-color: $colorKinBlue
+    +mobile()
+        padding: 20px
     &__wrap
         display: flex
         justify-content: space-between
         padding: 40px 0px
         font-size: 14px
         color: white
+        +mobile()
+            flex-direction: column
+            padding: 0px
         &--content
             a 
                 text-decoration: none
                 color: white
+            +mobile()
+                padding-bottom: 20px
 

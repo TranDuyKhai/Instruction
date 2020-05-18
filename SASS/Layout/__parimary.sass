@@ -32,7 +32,7 @@
         font-size: 80px
         color: $colorKinBlue
         z-index: 1
-        top: 32%
+        top: 28.5%
         left: 50%
         transform: translateX(-50%)
         font-family: 'Crimson Text', sans-serif
@@ -74,6 +74,12 @@
                 +mobile()
                     padding: 20px 10px
                     font-size: 14px
+        .arrow__icon
+            @extend %__arrow
+            &::before
+                background-color: white !important
+            &::after 
+                background-color: white !important
     &::after
         bottom: -90px
         max-width: 1120px
@@ -114,7 +120,7 @@
         font-size: 80px
         color: $colorKinBlue
         z-index: 1
-        top: 32%
+        top: 28.5%
         left: 50%
         transform: translateX(-50%)
         font-family: 'Crimson Text', sans-serif
@@ -152,6 +158,12 @@
                 +mobile()
                     padding: 20px 10px
                     font-size: 14px
+        .arrow__icon
+            @extend %__arrow
+            &::before
+                background-color: white !important
+            &::after 
+                background-color: white !important
     &::after
         bottom: -90px
         max-width: 1120px
@@ -282,20 +294,59 @@
             bottom: 100%
             display: flex
             flex-flow: row nowrap
-        span 
-            position: relative
-            display: block
-            width: 50px
-            height: 50px
+        & > div 
             background-color: $colorKinBlue
+            height: 50px
+            width: 50px
+            padding: 10px
+            cursor: pointer
+            span 
+                position: relative
+                display: block
+                position: relative
+                height: 50%
+                width: 100%
+                overflow: hidden
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0px 
+                    height: 100%
+                    width: 2px
+                    background-color: white
             &.next
                 margin-bottom: 1px
+                span 
+                    &::before
+                        right: 30%
+                    &:first-of-type 
+                        &::before
+                            transform-origin: bottom right
+                            transform: rotate(-45deg)
+                    &:last-of-type 
+                        &::before
+                            transform-origin: top right
+                            transform: rotate(45deg)
+            &.previous 
+                span 
+                    &::before
+                        left: 30%
+                    &:first-of-type 
+                        &::before
+                            transform-origin: bottom left
+                            transform: rotate(45deg)
+                    &:last-of-type 
+                        &::before
+                            transform-origin: top left
+                            transform: rotate(-45deg)
             +mobile()
                 width: 25px
                 height: 25px
                 &.next
                     margin-bottom: 0px
                     margin-right: 1px
+        
+
     &__link
         max-width: 1120px
         width: 100%
@@ -333,9 +384,12 @@
                 color: $colorKinBlue
                 font-size: 24px
                 font-weight: bold
+                justify-content: space-between
                 +mobile()
                     padding: 20px 10px
                     font-size: 18px
+        .arrow__icon
+            @extend %__arrow
 .Newsfocus
     margin: 100px 0px 90px
     padding: 100px 20px
@@ -373,6 +427,7 @@
             position: relative
             background-color: white
             border: none
+            padding: 0px
             +mobile()
                 height: auto
                 padding: 0px
@@ -389,10 +444,13 @@
                 color: black
                 font-size: 20px
                 font-weight: bold
+                justify-content: space-between
                 +mobile()
                     position: relative
                     padding: 20px 10px
                     font-size: 16px
+    .arrow__icon
+        @extend %__arrow
 .blog 
     display: flex
     align-items: center
@@ -556,25 +614,3 @@
         z-index: -1
         +mobile()
             top: 15%
-.footer 
-    padding: 0px 25px
-    line-height: 1
-    background-color: $colorKinBlue
-    +mobile()
-        padding: 20px
-    &__wrap
-        display: flex
-        justify-content: space-between
-        padding: 40px 0px
-        font-size: 14px
-        color: white
-        +mobile()
-            flex-direction: column
-            padding: 0px
-        &--content
-            a 
-                text-decoration: none
-                color: white
-            +mobile()
-                padding-bottom: 20px
-

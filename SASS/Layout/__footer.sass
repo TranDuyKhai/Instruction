@@ -1,3 +1,25 @@
 @import ../Abstract/__variables
+@import ../Abstract/__extend
 @import ../Abstract/__mixin
     
+.footer 
+    padding: 0px 25px
+    line-height: 1
+    background-color: $colorKinBlue
+    +mobile()
+        padding: 20px
+    &__wrap
+        display: flex
+        justify-content: space-between
+        padding: 40px 0px
+        font-size: 14px
+        color: white
+        +mobile()
+            flex-direction: column
+            padding: 0px
+        &--content
+            a 
+                text-decoration: none
+                color: white
+            +mobile()
+                padding-bottom: 20px

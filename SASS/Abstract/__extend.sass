@@ -1,0 +1,28 @@
+@import ../Abstract/__variables
+
+%__arrow
+    width: 30px 
+    height: 10px
+    overflow: hidden
+    z-index: 0
+    position: relative
+    &::before 
+        content: ''
+        position: absolute
+        bottom: 0px
+        right: 2px
+        width: 100%
+        background-color: $colorKinBlue
+        height: 2px
+        z-index: -1
+    &::after 
+        content: ''
+        position: absolute
+        right: 0px
+        width: 2px
+        bottom: 0px
+        height: 20px
+        transform-origin: bottom right
+        transform: rotate(-45deg)
+        background-color: $colorKinBlue
+        z-index: -2

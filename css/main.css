@@ -1,4 +1,38 @@
 @charset "UTF-8";
+.projectStory__buttons .arrow__icon, .workStyle__buttons .arrow__icon, .interview__link .arrow__icon, .Newsfocus .arrow__icon {
+  width: 30px;
+  height: 10px;
+  overflow: hidden;
+  z-index: 0;
+  position: relative;
+}
+
+.projectStory__buttons .arrow__icon::before, .workStyle__buttons .arrow__icon::before, .interview__link .arrow__icon::before, .Newsfocus .arrow__icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+  width: 100%;
+  background-color: #013e8d;
+  height: 2px;
+  z-index: -1;
+}
+
+.projectStory__buttons .arrow__icon::after, .workStyle__buttons .arrow__icon::after, .interview__link .arrow__icon::after, .Newsfocus .arrow__icon::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  width: 2px;
+  bottom: 0px;
+  height: 20px;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background-color: #013e8d;
+  z-index: -2;
+}
+
 .projectStory {
   width: 100%;
   position: relative;
@@ -49,7 +83,7 @@
   font-size: 80px;
   color: #013e8d;
   z-index: 1;
-  top: 32%;
+  top: 28.5%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -130,6 +164,14 @@
   }
 }
 
+.projectStory__buttons .arrow__icon::before {
+  background-color: white !important;
+}
+
+.projectStory__buttons .arrow__icon::after {
+  background-color: white !important;
+}
+
 .projectStory::after {
   bottom: -90px;
   max-width: 1120px;
@@ -196,7 +238,7 @@
   font-size: 80px;
   color: #013e8d;
   z-index: 1;
-  top: 32%;
+  top: 28.5%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -263,6 +305,14 @@
     padding: 20px 10px;
     font-size: 14px;
   }
+}
+
+.workStyle__buttons .arrow__icon::before {
+  background-color: white !important;
+}
+
+.workStyle__buttons .arrow__icon::after {
+  background-color: white !important;
 }
 
 .workStyle::after {
@@ -501,24 +551,78 @@
   }
 }
 
-.interview__button span {
-  position: relative;
-  display: block;
-  width: 50px;
-  height: 50px;
+.interview__button > div {
   background-color: #013e8d;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.interview__button span.next {
+.interview__button > div span {
+  position: relative;
+  display: block;
+  position: relative;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.interview__button > div span::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 2px;
+  background-color: white;
+}
+
+.interview__button > div.next {
   margin-bottom: 1px;
 }
 
+.interview__button > div.next span::before {
+  right: 30%;
+}
+
+.interview__button > div.next span:first-of-type::before {
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.interview__button > div.next span:last-of-type::before {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.interview__button > div.previous span::before {
+  left: 30%;
+}
+
+.interview__button > div.previous span:first-of-type::before {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.interview__button > div.previous span:last-of-type::before {
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
 @media screen and (max-width: 48em) {
-  .interview__button span {
+  .interview__button > div {
     width: 25px;
     height: 25px;
   }
-  .interview__button span.next {
+  .interview__button > div.next {
     margin-bottom: 0px;
     margin-right: 1px;
   }
@@ -588,6 +692,9 @@
   color: #013e8d;
   font-size: 24px;
   font-weight: bold;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (max-width: 48em) {
@@ -655,6 +762,7 @@
   position: relative;
   background-color: white;
   border: none;
+  padding: 0px;
 }
 
 @media screen and (max-width: 48em) {
@@ -681,6 +789,9 @@
   color: black;
   font-size: 20px;
   font-weight: bold;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (max-width: 48em) {
@@ -996,6 +1107,40 @@
   .recruit::after {
     top: 15%;
   }
+}
+
+.projectStory__buttons .arrow__icon, .workStyle__buttons .arrow__icon, .interview__link .arrow__icon, .Newsfocus .arrow__icon {
+  width: 30px;
+  height: 10px;
+  overflow: hidden;
+  z-index: 0;
+  position: relative;
+}
+
+.projectStory__buttons .arrow__icon::before, .workStyle__buttons .arrow__icon::before, .interview__link .arrow__icon::before, .Newsfocus .arrow__icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+  width: 100%;
+  background-color: #013e8d;
+  height: 2px;
+  z-index: -1;
+}
+
+.projectStory__buttons .arrow__icon::after, .workStyle__buttons .arrow__icon::after, .interview__link .arrow__icon::after, .Newsfocus .arrow__icon::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  width: 2px;
+  bottom: 0px;
+  height: 20px;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  background-color: #013e8d;
+  z-index: -2;
 }
 
 .footer {

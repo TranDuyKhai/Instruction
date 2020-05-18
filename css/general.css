@@ -1,2 +1,24 @@
-﻿@font-face{font-family:'A1MinchoStd-Bold';src:url("../assets/fonts/A1MinchoStd-Bold.otf")}body{font-family:"游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Kaku 　Gothic Pro", "メイリオ", "ＭＳ ゴシック", sans-serif}.banner-top{width:100%;margin:auto}.banner-top__content{font-size:80px}
-/*# sourceMappingURL=general.css.map */
+@charset "UTF-8";
+@font-face {
+  font-family: 'A1MinchoStd-Bold';
+  src: url("../assets/fonts/A1MinchoStd-Bold.otf");
+}
+
+body {
+  font-family: "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Kaku 　Gothic Pro", "メイリオ", "ＭＳ ゴシック", sans-serif;
+}
+
+.banner-top {
+  width: 100%;
+  margin: auto;
+}
+
+.banner-top__content {
+  font-size: 80px;
+}
+
+.technical {
+  /*@include tablet{
+		width: 100%;
+	}*/
+}

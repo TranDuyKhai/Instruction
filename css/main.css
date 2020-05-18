@@ -575,6 +575,10 @@
   height: 100%;
   width: 2px;
   background-color: white;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .interview__button > div.next {
@@ -599,6 +603,16 @@
           transform: rotate(45deg);
 }
 
+.interview__button > div.next:hover span:first-of-type::before {
+  -webkit-transform: rotate(-55deg);
+          transform: rotate(-55deg);
+}
+
+.interview__button > div.next:hover span:last-of-type::before {
+  -webkit-transform: rotate(55deg);
+          transform: rotate(55deg);
+}
+
 .interview__button > div.previous span::before {
   left: 30%;
 }
@@ -615,6 +629,16 @@
           transform-origin: top left;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.interview__button > div.previous:hover span:first-of-type::before {
+  -webkit-transform: rotate(55deg);
+          transform: rotate(55deg);
+}
+
+.interview__button > div.previous:hover span:last-of-type::before {
+  -webkit-transform: rotate(-55deg);
+          transform: rotate(-55deg);
 }
 
 @media screen and (max-width: 48em) {

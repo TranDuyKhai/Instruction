@@ -314,6 +314,7 @@
                     height: 100%
                     width: 2px
                     background-color: white
+                    transition: transform 0.3s ease
             &.next
                 margin-bottom: 1px
                 span 
@@ -327,6 +328,14 @@
                         &::before
                             transform-origin: top right
                             transform: rotate(45deg)
+                &:hover
+                    span 
+                        &:first-of-type 
+                            &::before
+                                transform: rotate(-55deg)
+                        &:last-of-type 
+                            &::before
+                                transform: rotate(55deg)
             &.previous 
                 span 
                     &::before
@@ -339,14 +348,20 @@
                         &::before
                             transform-origin: top left
                             transform: rotate(-45deg)
+                &:hover
+                    span 
+                        &:first-of-type 
+                            &::before
+                                transform: rotate(55deg)
+                        &:last-of-type 
+                            &::before
+                                transform: rotate(-55deg)
             +mobile()
                 width: 25px
                 height: 25px
                 &.next
                     margin-bottom: 0px
                     margin-right: 1px
-        
-
     &__link
         max-width: 1120px
         width: 100%

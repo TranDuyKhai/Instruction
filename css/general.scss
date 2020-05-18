@@ -269,5 +269,41 @@ body{
 				top: -1px;
 			}
 		}
+		&--btnMore{
+			text-align: right;
+			padding-right: 35px;
+			button{
+				background: none;
+				border: none;
+				position: relative;
+				padding-top: 25px;
+				color: #fff;
+				font-size: 16px;
+				&::after{
+					content: '';
+					position: absolute;
+					background-color: #fff;
+					width: 20px;
+					height: 2px;
+					left: 0;
+					top: 0;
+					transition: all 0.5s ease;
+				}
+				&:hover::after{
+					width: 100%;
+				}
+				&:hover::before{
+					content: '';
+					position: absolute;
+					background-color: #fff;
+					width: 20px;
+					height: 2px;
+					right: 0;
+					top: 0;
+					transform-origin: right center;
+					transform: rotate(-45deg);
+				}
+			}
+		}
 	}
 }

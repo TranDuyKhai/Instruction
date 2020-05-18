@@ -1046,8 +1046,13 @@
 
 .recruit__list > *:not(:last-of-type) {
   margin-right: 20px;
-  margin-right: 0px;
-  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 48em) {
+  .recruit__list > *:not(:last-of-type) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
 }
 
 .recruit__list > * h3 {

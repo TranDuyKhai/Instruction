@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import 'function_responsive';
 @font-face {
 	font-family: 'A1MinchoStd-Bold';
@@ -11,16 +12,89 @@
 body{
 	font-family: "游ゴシック", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Kaku 　Gothic Pro", "メイリオ", "ＭＳ ゴシック", sans-serif;
 }
+header{
+	position: fixed;
+	width: 100%;
+	z-index: 5;
+	transform-origin: center center;
+	transition: all 0.5s ease;
+}
+.back-to-top{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 0px;
+	position: fixed;
+	bottom: 55px;
+	right: 5vw;
+	font-size: 30px;
+	color: #9c9c96;
+	cursor: pointer;
+	z-index: 2;
+	background-color: #20569d;
+	outline: unset !important;
+	@include mobile{
+		width: 40px;
+		height: 40px;
+	}
+	span::before{
+		content: '';
+		position: absolute;
+		top: 25%;
+		right: 0px;
+		width: 50%;
+		height: 4px;
+		-webkit-transform-origin: top left;
+		transform-origin: top left;
+		-webkit-transform: rotate(35deg);
+		transform: rotate(35deg);
+		background-color: white;
+		border-radius: 2px;
+		-webkit-transition: -webkit-transform 0.3s ease;
+		transition: -webkit-transform 0.3s ease;
+		transition: transform 0.3s ease;
+		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+	}
+	span::after{
+		content: '';
+		position: absolute;
+		top: 25%;
+		left: 0px;
+		width: 50%;
+		height: 4px;
+		-webkit-transform-origin: top right;
+		transform-origin: top right;
+		-webkit-transform: rotate(-35deg);
+		transform: rotate(-35deg);
+		background-color: white;
+		border-radius: 2px;
+		-webkit-transition: -webkit-transform 0.3s ease;
+		transition: -webkit-transform 0.3s ease;
+		transition: transform 0.3s ease;
+		transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+	}
+	&:hover{
+		opacity: 0.5 !important;
+		border: 1px  solid #abb8bf;
+		span::before{
+			transform: rotate(45deg);
+		}
+		span::after{
+			transform: rotate(-45deg);
+		}
+	}
+}
 
 .header-title{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 40px 60px;
-	position: fixed;
 	width: 100%;
-	z-index: 1;
-
+	z-index: 2;
+	@include tablet{
+		padding: 40px 10px;
+	}
 	&__logo{
 		color: #fff;
 		width: max-content;
@@ -75,18 +149,33 @@ body{
 		background-color: #013e8d;
 		position: absolute;
 		transform-origin: center center;
+		&#top{
+			transform: translateY(-20px);
+			transition: all 1s ease;
+		}
+		&#middle{
+			transition: all 1s ease;
+		}
+		&#bottom{
+			transform: translateY(20px);
+			transition: all 1s ease;
+		}
+		&.show{
+			&#top{
+				transform: rotate(45deg) translateY(0px);
+				transition: all 0.6s ease;
+			}
+			&#middle{
+				transform: rotate(135deg) translateY(0px);
+				transition: all 0.6s ease;
+			}
+			&#bottom{
+				transform: rotate(135deg) translateY(0px);
+				transition: all 0.6s ease;
+			}
+		}
 	}
-	#top{
-		transform: translateY(-20px);
-		transition: all 1s ease;
-	}
-	#middle{
-		transition: all 1s ease;
-	}
-	#bottom{
-		transform: translateY(20px);
-		transition: all 1s ease;
-	}
+	
 }
 
 .banner-top{
@@ -123,7 +212,84 @@ body{
 		}
 	}
 }
+.show{
+	transform: translateY(0%);
+}
+.hide{
+	transform: translateY(-100%);
+}
+.headerMenu{
+	background-color: #000;
+    padding: 350px 0;
+    width: 100%;
+	position: absolute;
+    top: 0;
+    z-index: -1;
+    transition: all 0.7s ease;
+    @include tablet{
+    	padding: 130px 0;
+    	height: 670px;
+    	overflow-x: hidden;
+    	overflow-y: scroll;
+    }
+	&__list{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include tablet{
+			flex-flow: column wrap;
+		}
+		&--child{
+			width: 100%;
+			height: 265px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border-top: 5px solid #013e8d;
+			background-color: #fff;
+			position: relative;
+			h3{
+				font-size: 20px;
+				font-weight: bold;
+				margin-top: 30px;
+			}
+			a{
+				position: absolute;
+				@include fillposition;
+			}
+			&:hover svg{
+				animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+				transform: translate3d(0, 0, 0);
+				backface-visibility: hidden;
+				perspective: 1000px;
+			}
+			@keyframes shake {
+				10%, 90% {
+					transform: translate3d(-1px, 0, 0);
+				}
 
+				20%, 80% {
+					transform: translate3d(2px, 0, 0);
+				}
+
+				30%, 50%, 70% {
+					transform: translate3d(-4px, 0, 0);
+				}
+
+				40%, 60% {
+					transform: translate3d(4px, 0, 0);
+				}
+			}
+		}
+		&--child:not(:last-of-type){
+			margin-right: 20px;
+			@include tablet{
+				margin-right: 0;
+			}
+		}
+	}
+}
 .technical{
 	height: 205px;
 	position: relative;
@@ -149,6 +315,9 @@ body{
 			font-weight: bold;
 			color: #333;
 			text-align: center;
+			@include tablet{
+				font-size: 14px;
+			}
 		}
 		.container{
 			background-color: #fff;
@@ -161,6 +330,9 @@ body{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	@include mobile{
+		flex-flow: column wrap;
+	}
 	&__project{
 		width: 100%;
 		position: relative;
@@ -169,16 +341,14 @@ body{
 			position: absolute;
 			@include fillposition;
 			cursor: pointer;
+			z-index: 1;
 		}
 		&:hover &--img::after{
 			transform: scale(0);
 		}
 		&--img{
 			width: 100%;
-			position: absolute;
-			@include fillposition;
-			z-index: -1;
-			overflow: hidden;
+			position: relative;
 			&::after{
 				content: '';
 				position: absolute;
@@ -186,17 +356,18 @@ body{
 				background-color: #20569d;
 				opacity: 0.85;
 				transform-origin: center center;
-				transition: all 1s ease;	
+				transition: all 0.3s ease;	
 			}
 		}
 		&--content{
 			width: 115px;
 			height: 160px;
-			margin: auto;
-			z-index: 2;
-			margin-top: 180px;
-			margin-bottom: 180px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
 			color: #fff;
+			transform-origin: center center;
+			transform: translate(-50%, -50%);
 			text-align: center;
 			p{
 				font-family: 'Crimson Text';

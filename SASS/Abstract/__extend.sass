@@ -23,6 +23,14 @@
         bottom: 0px
         height: 20px
         transform-origin: bottom right
-        transform: rotate(-45deg)
+        transform: rotate(-40deg)
         background-color: $colorKinBlue
         z-index: -2
+        transition: all 0.3s ease
+
+=hoverArrow()
+    .EffectArrow
+        &:hover
+            .arrow__icon
+                &::after
+                    transform: rotate(-45deg)

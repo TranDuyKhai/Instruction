@@ -375,6 +375,9 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 100px 0; }
+  @media screen and (max-width: 767px) {
+    .aimingfor__content {
+      margin: 50px 0; } }
   .aimingfor__content h2 {
     font-family: 'A1MinchoStd-Bold',sans-serif;
     font-size: 45px;

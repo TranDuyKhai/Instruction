@@ -63,6 +63,8 @@
 @media screen and (max-width: 48em) {
   .projectStory__figure {
     width: 100%;
+    max-width: 594px;
+    height: auto;
   }
 }
 
@@ -149,7 +151,8 @@
 @media screen and (max-width: 48em) {
   .projectStory__buttons button {
     width: 100%;
-    height: auto;
+    max-height: 56px;
+    max-width: 500px;
   }
 }
 
@@ -170,12 +173,21 @@
   padding: 0px 35px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  line-height: 1;
 }
 
 @media screen and (max-width: 48em) {
   .projectStory__buttons button a {
-    padding: 20px 10px;
+    padding: 0px 10px;
     font-size: 14px;
+    line-height: 1.4;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100%;
+  }
+  .projectStory__buttons button a > *:not(:last-of-type) {
+    margin-right: 10px;
   }
 }
 
@@ -309,7 +321,8 @@
 @media screen and (max-width: 48em) {
   .workStyle__buttons button {
     width: 100%;
-    height: auto;
+    max-height: 56px;
+    max-width: 500px;
   }
 }
 
@@ -326,12 +339,20 @@
   padding: 0px 35px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  line-height: 1;
 }
 
 @media screen and (max-width: 48em) {
   .workStyle__buttons button a {
-    padding: 20px 10px;
+    padding: 10px 10px;
     font-size: 14px;
+    line-height: 1.4;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .workStyle__buttons button a > *:first-of-type {
+    margin-right: 10px;
   }
 }
 
@@ -368,6 +389,7 @@
   z-index: 0;
   width: 100%;
   padding: 0px 20px;
+  overflow: hidden;
 }
 
 .interview::after {
@@ -406,6 +428,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    max-width: 500px;
   }
 }
 
@@ -546,6 +569,7 @@
 .interview__figure {
   margin: 0px;
   position: relative;
+  max-width: 550px;
 }
 
 .interview__figure img {
@@ -614,9 +638,9 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse nowrap;
+            flex-flow: row-reverse nowrap;
   }
 }
 
@@ -626,6 +650,12 @@
   width: 50px;
   padding: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 48em) {
+  .interview__button > div {
+    padding: 3px;
+  }
 }
 
 .interview__button > div span {
@@ -738,7 +768,7 @@
   }
   .interview__button > div.next {
     margin-bottom: 0px;
-    margin-right: 1px;
+    margin-left: 1px;
   }
 }
 
@@ -758,6 +788,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     padding: 20px 0px 40px;
+    max-width: 500px;
   }
 }
 
@@ -893,6 +924,7 @@
   .Newsfocus__wrap {
     -ms-grid-columns: (1fr)[1];
         grid-template-columns: repeat(1, 1fr);
+    max-width: 500px;
   }
 }
 
@@ -1224,6 +1256,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    max-width: 500px;
   }
 }
 
@@ -1325,6 +1358,7 @@
   .recruit__entry {
     width: 100%;
     height: auto;
+    max-width: 500px;
   }
 }
 
@@ -1447,7 +1481,7 @@
 
 @media screen and (max-width: 48em) {
   .footer {
-    padding: 20px;
+    padding: 20px 20px 0px;
   }
 }
 
@@ -1458,18 +1492,22 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 40px 0px;
   font-size: 14px;
   color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 48em) {
   .footer__wrap {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     padding: 0px;
+  }
+  .footer__wrap > * {
+    padding-bottom: 20px;
   }
 }
 
@@ -1478,10 +1516,12 @@
   color: white;
 }
 
-@media screen and (max-width: 48em) {
-  .footer__wrap--content {
-    padding-bottom: 20px;
-  }
+.footer__wrap--content a:first-of-type {
+  margin-right: 10px;
+}
+
+.footer__wrap--content a svg {
+  margin-left: 5px;
 }
 
 * {

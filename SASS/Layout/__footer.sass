@@ -7,19 +7,25 @@
     line-height: 1
     background-color: $colorKinBlue
     +mobile()
-        padding: 20px
+        padding: 20px 20px 0px
     &__wrap
         display: flex
         justify-content: space-between
+        flex-wrap: wrap
         padding: 40px 0px
         font-size: 14px
         color: white
+        align-items: center
         +mobile()
-            flex-direction: column
             padding: 0px
+            & > * 
+                padding-bottom: 20px
         &--content
             a 
                 text-decoration: none
                 color: white
-            +mobile()
-                padding-bottom: 20px
+                &:first-of-type 
+                    margin-right: 10px
+                svg 
+                    margin-left: 5px
+                

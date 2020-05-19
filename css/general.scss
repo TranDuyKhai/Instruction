@@ -93,11 +93,10 @@ header{
 	width: 100%;
 	z-index: 2;
 	@include tablet{
-		padding: 40px 10px;
+		padding: 20px 10px !important;
 	}
 	&__logo{
 		color: #fff;
-		position: relative;
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
@@ -107,11 +106,16 @@ header{
 			font-size: 36px;
 			font-weight: bold;
 		}
-		>a{
-			position: absolute;
-			@include fillposition;
-			cursor: pointer;
+		&--boxLogo{
+			width: max-content;
+			position: relative;
+			>a{
+				position: absolute;
+				@include fillposition;
+				cursor: pointer;
+			}
 		}
+
 	}
 	&__entry{
 		background-color: #013e8d;
@@ -122,7 +126,7 @@ header{
 		font-weight: bold;
 		transform-origin: center center;
 		cursor: pointer;
-		a, a:hover{
+		>a, >a:hover{
 			color: #fff;
 			text-decoration: none;
 		}
@@ -139,6 +143,9 @@ header{
 		position: relative;
 		width: 45px;
 		height: 45px;
+		@include mobile{
+			margin-left: 20px;
+		}
 	}
 	&__line{
 		display: block;
@@ -293,6 +300,7 @@ header{
 			margin-right: 20px;
 			@include tablet{
 				margin-right: 0;
+				margin-bottom: 20px;
 			}
 		}
 	}
@@ -315,6 +323,9 @@ header{
 			span{
 				color: #666;
 				font-size: 20px;
+			}
+			@include mobile{
+				font-size: 50px;
 			}
 		}
 		p{
@@ -344,7 +355,7 @@ header{
 		width: 100%;
 		position: relative;
 		z-index: 0;
-		@include tablet{
+		@include mobile{
 			&:not(:last-of-type){
 				margin-bottom: 20px;
 			}

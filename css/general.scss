@@ -40,9 +40,9 @@ header{
 	span::before{
 		content: '';
 		position: absolute;
-		top: 25%;
-		right: 0px;
-		width: 50%;
+		top: 30%;
+		right: 10%;
+		width: 40%;
 		height: 4px;
 		-webkit-transform-origin: top left;
 		transform-origin: top left;
@@ -58,9 +58,9 @@ header{
 	span::after{
 		content: '';
 		position: absolute;
-		top: 25%;
-		left: 0px;
-		width: 50%;
+		top: 30%;
+		left: 10%;
+		width: 40%;
 		height: 4px;
 		-webkit-transform-origin: top right;
 		transform-origin: top right;
@@ -97,23 +97,21 @@ header{
 	}
 	&__logo{
 		color: #fff;
-		width: max-content;
 		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		h1{
 			font-family: 'Montserrat', sans-serif;
 			font-size: 36px;
 			font-weight: bold;
 		}
-		a{
+		>a{
 			position: absolute;
 			@include fillposition;
 			cursor: pointer;
 		}
-	}
-	&__menubox{
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 	}
 	&__entry{
 		background-color: #013e8d;
@@ -182,10 +180,13 @@ header{
 	background-image: url('../images/img_banner-top.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center center;
 	position: relative;
 	z-index: 0;
 	min-height: 1118px;
-
+	@include tablet{
+		min-height: 565px;
+	}
 	&::after{
 		content: '';
 		position: absolute;
@@ -199,16 +200,22 @@ header{
 		max-width: 1120px;
 		width: 100%;
 		margin: auto;
-		top: 50%;
+		top: 40%;
 		left: 50%;
 		transform-origin: center center;
 		transform: translateX(-50%);
 		color: #fff;
+		@include tablet{
+			top: 25%;
+		}
 		h2{
 			font-family: 'A1MinchoStd-Bold', sans-serif;
 			font-size: 80px;
 			font-weight: bold;
 			text-align: center;
+			@include tablet{
+				font-size: 50px;
+			}
 		}
 	}
 }
@@ -337,6 +344,11 @@ header{
 		width: 100%;
 		position: relative;
 		z-index: 0;
+		@include tablet{
+			&:not(:last-of-type){
+				margin-bottom: 20px;
+			}
+		}
 		>a{
 			position: absolute;
 			@include fillposition;
@@ -410,6 +422,9 @@ header{
 			padding-top: 90px;
 			margin-bottom: 30px;
 			color: #fff;
+			@include mobile{
+				font-size: 35px;
+			}
 		}
 		p{
 			color: #fff;
@@ -443,6 +458,10 @@ header{
 		&--btnMore{
 			text-align: right;
 			padding-right: 35px;
+			padding-bottom: 35px;
+			@include mobile{
+				padding-top: 10px;
+			}
 			button{
 				background: none;
 				border: none;
@@ -450,6 +469,7 @@ header{
 				padding-top: 25px;
 				color: #fff;
 				font-size: 16px;
+				outline: none;
 				&::after{
 					content: '';
 					position: absolute;

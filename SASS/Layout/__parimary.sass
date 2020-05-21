@@ -59,13 +59,26 @@
             width: calc(50% + 10px)
             min-width: 490px
             height: 80px
-            background-color: $colorKinBlue2
             border: none
             padding: 0px
             opacity: 1
             transition: all 0.3s ease
+            position: relative
+            z-index: 0
+            &::after
+                content: ''
+                position: absolute
+                top: 0px
+                right: 0px
+                left: 0px
+                bottom: 0px
+                background-color: $colorKinBlue2
+                opacity: 1
+                transition: opacity 0.3s ease
+                z-index: -1
             &:hover
-                opacity: 0.8
+                &::after
+                    opacity: 0.8
                 a 
                     transform: translate3d(5px, 0px, 0px)
             +mobile()
@@ -163,12 +176,25 @@
         button 
             width: calc(50% - 10px)
             height: 80px
-            background-color: $colorKinBlue2
             border: none
             padding: 0px
             transition: all 0.3s ease
+            position: relative
+            z-index: 0
+            &::after
+                content: ''
+                position: absolute
+                top: 0px
+                right: 0px
+                left: 0px
+                bottom: 0px
+                background-color: $colorKinBlue2
+                opacity: 1
+                transition: opacity 0.3s ease
+                z-index: -1
             &:hover
-                opacity: 0.8
+                &::after
+                    opacity: 0.8
                 a 
                     transform: translate3d(5px, 0px, 0px)
             +mobile()

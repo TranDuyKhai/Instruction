@@ -209,7 +209,7 @@ header{
 	z-index: 0;
 	min-height: 1118px;
 	@include tablet{
-		min-height: 335px;
+		min-height: 290px;
 	}
 	&::after{
 		content: '';
@@ -345,10 +345,10 @@ header{
 		bottom: 0;
 		height: 365px;
 		@include tablet{
-			max-height: 235px;
+			max-height: 215px;
 		}
 		@include mobileSmallWidth{
-			max-height: 270px;
+			max-height: 260px;
 		}
 		@include ipadScreen{
 			max-height: 190px;
@@ -456,7 +456,7 @@ header{
 				opacity: 0.85;
 				transform-origin: center center;
 				transition: all 0.3s ease;
-				transform: scale(4);
+				transform: scale(6,4);
 				z-index: -1;
 			}
 			p{
@@ -496,7 +496,7 @@ header{
 		margin: 100px 0;
 		position: relative;
 		@include mobile{
-			margin: 50px 0;
+			margin: 30px 0 50px 0;
 		}
 		>a{
 			position: absolute;
@@ -521,7 +521,7 @@ header{
 			margin-bottom: 30px;
 			color: #fff;
 			@include mobile{
-				font-size: 35px;
+				font-size: 30px;
 				padding-top: 50px;
 			}
 		}

@@ -410,7 +410,7 @@ header {
         opacity: 0.85;
         transform-origin: center center;
         transition: all 0.3s ease;
-        transform: scale(4);
+        transform: scale(6, 4);
         z-index: -1; }
       .project-file__project--content p {
         font-family: 'Crimson Text';
@@ -467,7 +467,7 @@ header {
     color: #fff; }
     @media screen and (max-width: 767px) {
       .aimingfor__content h2 {
-        font-size: 35px;
+        font-size: 30px;
         padding-top: 50px; } }
   .aimingfor__content p {
     color: #fff;

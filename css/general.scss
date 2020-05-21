@@ -360,15 +360,19 @@ header{
 			text-align: center;
 			padding: 65px 0 40px 0;
 			letter-spacing: 3px;
+			display: flex;
+			flex-direction: column;
 			span{
 				color: #666;
 				font-size: 20px;
+				margin-top: 30px;
 			}
 			@include tablet{
 				font-size: 30px;
 				padding: 25px 0 20px 0;
 				span{
 					font-size: 14px;
+					margin-top: 7px;
 				}
 			}
 		}
@@ -407,6 +411,7 @@ header{
 		height: 100%;
 		position: relative;
 		z-index: 0;
+		overflow: hidden;
 		@include mobile{
 			&:not(:last-of-type){
 				margin-bottom: 20px;
@@ -418,8 +423,8 @@ header{
 			cursor: pointer;
 			z-index: 1;
 		}
-		&:hover &--img::after{
-			transform: scale(0.4);
+		&:hover &--content::after{
+			transform: scale(1);
 		}
 		&--img{
 			width: 100%;
@@ -432,19 +437,10 @@ header{
 			@include mobile{
 				max-height: 260px;
 			}
-			&::after{
-				content: '';
-				position: absolute;
-				@include fillposition;
-				background-color: #20569d;
-				opacity: 0.85;
-				transform-origin: center center;
-				transition: all 0.3s ease;	
-			}
 		}
 		&--content{
 			width: 115px;
-			height: 160px;
+			height: 175px;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -452,6 +448,17 @@ header{
 			transform-origin: center center;
 			transform: translate(-50%, -50%);
 			text-align: center;
+			&::after{
+				content: '';
+				position: absolute;
+				@include fillposition;
+				background-color: #20569d;
+				opacity: 0.85;
+				transform-origin: center center;
+				transition: all 0.3s ease;
+				transform: scale(4);
+				z-index: -1;
+			}
 			p{
 				font-family: 'Crimson Text';
 				font-size: 18px;

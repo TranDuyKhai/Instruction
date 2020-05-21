@@ -15,6 +15,9 @@ header {
   transform-origin: center center;
   transition: all 0.5s ease; }
 
+main {
+  overflow: hidden; }
+
 .back-to-top {
   width: 80px;
   height: 80px;
@@ -36,7 +39,7 @@ header {
   .back-to-top span::before {
     content: '';
     position: absolute;
-    top: 30%;
+    top: 35%;
     right: 10%;
     width: 40%;
     height: 4px;
@@ -53,7 +56,7 @@ header {
   .back-to-top span::after {
     content: '';
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 10%;
     width: 40%;
     height: 4px;
@@ -228,10 +231,13 @@ header {
   top: 0;
   z-index: -1;
   transition: all 0.7s ease; }
+  @media screen and (max-width: 1024px) {
+    .headerMenu {
+      height: 100vh; } }
   @media screen and (max-width: 767px) {
     .headerMenu {
       padding: 130px 0;
-      height: 670px;
+      height: 100vh;
       overflow-x: hidden;
       overflow-y: scroll; } }
   .headerMenu__list {
@@ -257,7 +263,7 @@ header {
       position: relative; }
       @media screen and (max-width: 1024px) {
         .headerMenu__list--child {
-          height: 170px;
+          height: 120px;
           width: calc((100% - 20px) / 2); } }
       @media screen and (max-width: 767px) {
         .headerMenu__list--child {
@@ -266,6 +272,10 @@ header {
         font-size: 20px;
         font-weight: bold;
         margin-top: 30px; }
+        @media screen and (max-width: 1024px) {
+          .headerMenu__list--child h3 {
+            font-size: 14px;
+            margin-top: 15px; } }
       .headerMenu__list--child a {
         position: absolute;
         top: 0;
@@ -483,7 +493,7 @@ header {
       width: 100%;
       height: 100%;
       background: linear-gradient(90deg, transparent 0%, white 100%);
-      clip-path: polygon(0 0%, 100% 25%, 100% 52%, 0 52%); }
+      clip-path: polygon(0 0%, 100% 25%, 100% 50%, 0 50%); }
     .aimingfor__content--line::after {
       content: '';
       position: absolute;

@@ -19,6 +19,9 @@ header{
 	transform-origin: center center;
 	transition: all 0.5s ease;
 }
+main{
+	overflow: hidden;
+}
 .back-to-top{
 	width: 80px;
 	height: 80px;
@@ -40,7 +43,7 @@ header{
 	span::before{
 		content: '';
 		position: absolute;
-		top: 30%;
+		top: 35%;
 		right: 10%;
 		width: 40%;
 		height: 4px;
@@ -58,7 +61,7 @@ header{
 	span::after{
 		content: '';
 		position: absolute;
-		top: 30%;
+		top: 35%;
 		left: 10%;
 		width: 40%;
 		height: 4px;
@@ -255,9 +258,12 @@ header{
     top: 0;
     z-index: -1;
     transition: all 0.7s ease;
+    @include tablet{
+    	height: 100vh;
+    }
     @include mobile{
     	padding: 130px 0;
-    	height: 670px;
+    	height: 100vh;
     	overflow-x: hidden;
     	overflow-y: scroll;
     }
@@ -283,7 +289,7 @@ header{
 			background-color: #fff;
 			position: relative;
 			@include tablet{
-				height: 170px;
+				height: 120px;
 				width: calc((100% - 20px) / 2);
 			}
 			@include mobile{
@@ -293,6 +299,10 @@ header{
 				font-size: 20px;
 				font-weight: bold;
 				margin-top: 30px;
+				@include tablet{
+					font-size: 14px;
+					margin-top: 15px;
+				}
 			}
 			a{
 				position: absolute;
@@ -540,7 +550,7 @@ header{
 				width: 100%;
 				height: 100%;
 				background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,1) 100%);
-				clip-path: polygon(0 0%, 100% 25%, 100% 52%, 0 52%);
+				clip-path: polygon(0 0%, 100% 25%, 100% 50%, 0 50%);
 			}
 			&::after{
 				content: '';

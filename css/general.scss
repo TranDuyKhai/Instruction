@@ -209,7 +209,7 @@ header{
 	z-index: 0;
 	min-height: 1118px;
 	@include tablet{
-		min-height: 335px;
+		min-height: 290px;
 	}
 	&::after{
 		content: '';
@@ -345,10 +345,10 @@ header{
 		bottom: 0;
 		height: 365px;
 		@include tablet{
-			max-height: 235px;
+			max-height: 215px;
 		}
 		@include mobileSmallWidth{
-			max-height: 270px;
+			max-height: 260px;
 		}
 		@include ipadScreen{
 			max-height: 190px;
@@ -496,7 +496,7 @@ header{
 		margin: 100px 0;
 		position: relative;
 		@include mobile{
-			margin: 50px 0;
+			margin: 30px 0 50px 0;
 		}
 		>a{
 			position: absolute;

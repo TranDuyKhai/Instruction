@@ -183,7 +183,7 @@ header {
   min-height: 1118px; }
   @media screen and (max-width: 1024px) {
     .banner-top {
-      min-height: 335px; } }
+      min-height: 290px; } }
   .banner-top::after {
     content: '';
     position: absolute;
@@ -306,10 +306,10 @@ header {
     height: 365px; }
     @media screen and (max-width: 1024px) {
       .technical__content {
-        max-height: 235px; } }
+        max-height: 215px; } }
     @media screen and (max-width: 320px) {
       .technical__content {
-        max-height: 270px; } }
+        max-height: 260px; } }
     @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
       .technical__content {
         max-height: 190px; } }
@@ -443,7 +443,7 @@ header {
   position: relative; }
   @media screen and (max-width: 767px) {
     .aimingfor__content {
-      margin: 50px 0; } }
+      margin: 30px 0 50px 0; } }
   .aimingfor__content > a {
     position: absolute;
     top: 0;

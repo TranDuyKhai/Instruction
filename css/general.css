@@ -31,10 +31,8 @@ header {
   outline: unset !important; }
   @media screen and (max-width: 767px) {
     .back-to-top {
-      min-width: 40px;
-      width: 40px;
-      min-height: 40px;
-      height: 40px; } }
+      width: 40px !important;
+      height: 40px !important; } }
   .back-to-top span::before {
     content: '';
     position: absolute;

@@ -3,9 +3,9 @@ $('.header-title__btn-menu').on('click', function(){
 	$('.header-title__btn-menu>.header-title__line').is('.show')? $('.header-title__btn-menu>.header-title__line').removeClass('show'): $('.header-title__btn-menu>.header-title__line').addClass('show');
 });
 
-for (let key in symbol) {
+for (let key in svgIcon) {
 	let count = key.substr(-1);
-	$('.headerMenu__list--child').eq(parseInt(count) - 1).html(symbol[key] + $('.headerMenu__list--child').eq(parseInt(count) - 1).html());
+	$('.headerMenu__list--child').eq(parseInt(count) - 1).html(svgIcon[key] + $('.headerMenu__list--child').eq(parseInt(count) - 1).html());
 }
 
 $(window).on('load scroll',function() {
